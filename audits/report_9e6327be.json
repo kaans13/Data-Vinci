@@ -1,0 +1,1873 @@
+{
+  "report_metadata": {
+    "report_id": "0163fe90-1174-4db0-a57e-00990bf90657",
+    "generated_at": "2026-04-03T21:49:15.579952+00:00",
+    "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+    "session_start": "2026-04-03T21:41:20.413700+00:00",
+    "session_duration_sec": 475.17,
+    "tool": "Data-Autopsy",
+    "version": "3.0"
+  },
+  "summary": {
+    "total_operations": 71,
+    "ops_by_type": {
+      "LOAD": 3,
+      "AUDIT": 5,
+      "NORMALIZE": 63
+    },
+    "success_count": 71,
+    "warning_count": 0,
+    "error_count": 0,
+    "quality_score": 100.0,
+    "effect_size_summary": {
+      "NORMALIZE": {
+        "avg_cohen_d": 0.0,
+        "interpretation": "Ihmal Edilebilir"
+      }
+    }
+  },
+  "operations": {
+    "LOAD": [
+      {
+        "timestamp": "2026-04-03T21:42:23.740763+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "b12a149f-afaa-4f13-b120-6e5f7d5d0bef",
+        "operation": "LOAD",
+        "module": "database",
+        "status": "SUCCESS",
+        "message": "Yüklendi: diet.csv",
+        "input_summary": {
+          "file_path": "C:\\Users\\metin\\OneDrive\\Desktop\\diyabet\\diet.csv",
+          "file_size_kb": 4475.3
+        },
+        "output_summary": {
+          "rows": 9813,
+          "columns": 168,
+          "encoding": "utf_8"
+        },
+        "parameters": {},
+        "duration_ms": 432.39,
+        "effect_size": {}
+      },
+      {
+        "timestamp": "2026-04-03T21:46:11.312681+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "40b2dd80-37bb-497d-b895-d4861479e142",
+        "operation": "LOAD",
+        "module": "database",
+        "status": "SUCCESS",
+        "message": "Yüklendi: test.csv",
+        "input_summary": {
+          "file_path": "C:\\Users\\metin\\OneDrive\\Desktop\\test.csv",
+          "file_size_kb": 0.42
+        },
+        "output_summary": {
+          "rows": 7,
+          "columns": 5,
+          "encoding": "utf_8"
+        },
+        "parameters": {},
+        "duration_ms": 22.81,
+        "effect_size": {}
+      },
+      {
+        "timestamp": "2026-04-03T21:47:50.219074+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "f71063af-9681-46e6-8f6c-d1ff3a19d53d",
+        "operation": "LOAD",
+        "module": "database",
+        "status": "SUCCESS",
+        "message": "Yüklendi: KARAMAN_STRATEJIK_ANALIZ_FINAL.xlsx",
+        "input_summary": {
+          "file_path": "C:\\Users\\metin\\OneDrive\\Desktop\\secim\\KARAMAN_STRATEJIK_ANALIZ_FINAL.xlsx",
+          "file_size_kb": 34.03
+        },
+        "output_summary": {
+          "rows": 158,
+          "columns": 38,
+          "encoding": "utf-8"
+        },
+        "parameters": {},
+        "duration_ms": 602.94,
+        "effect_size": {}
+      }
+    ],
+    "AUDIT": [
+      {
+        "timestamp": "2026-04-03T21:42:46.521290+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "cdee74c0-f56d-4abe-9d8d-f42c71c91b42",
+        "operation": "AUDIT",
+        "module": "statistical_auditor.benford",
+        "status": "SUCCESS",
+        "message": "Benford 'DR1TRET': ŞÜPHELİ",
+        "input_summary": {},
+        "output_summary": {
+          "chi_square": 439.8851,
+          "p_value": 0.0,
+          "is_suspicious": true
+        },
+        "parameters": {
+          "column": "DR1TRET",
+          "alpha": 0.05
+        },
+        "duration_ms": 16.843,
+        "effect_size": {}
+      },
+      {
+        "timestamp": "2026-04-03T21:43:12.241417+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "066a94cf-16f6-415d-a1e4-65f656607771",
+        "operation": "AUDIT",
+        "module": "statistical_auditor.outlier",
+        "status": "SUCCESS",
+        "message": "Aykırı 'DR1TRET' (IQR): 299/8531",
+        "input_summary": {},
+        "output_summary": {
+          "outlier_count": 299,
+          "outlier_rate_pct": 3.5,
+          "normality_p": 0.0
+        },
+        "parameters": {
+          "column": "DR1TRET",
+          "method": "IQR",
+          "threshold": 1.5
+        },
+        "duration_ms": 11.298,
+        "effect_size": {}
+      },
+      {
+        "timestamp": "2026-04-03T21:48:06.847268+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "2baa6efb-66e6-44e3-910b-8e65618e41ed",
+        "operation": "AUDIT",
+        "module": "statistical_auditor.benford",
+        "status": "SUCCESS",
+        "message": "Benford 'Kayıtlı_Seçmen_Sayısı': ŞÜPHELİ",
+        "input_summary": {},
+        "output_summary": {
+          "chi_square": 17.6534,
+          "p_value": 0.024,
+          "is_suspicious": true
+        },
+        "parameters": {
+          "column": "Kayıtlı_Seçmen_Sayısı",
+          "alpha": 0.05
+        },
+        "duration_ms": 4.254,
+        "effect_size": {}
+      },
+      {
+        "timestamp": "2026-04-03T21:48:20.597705+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "1b9c5693-4002-473d-8fbb-5cfb6caab27b",
+        "operation": "AUDIT",
+        "module": "statistical_auditor.outlier",
+        "status": "SUCCESS",
+        "message": "Aykırı 'Kayıtlı_Seçmen_Sayısı' (IQR): 9/158",
+        "input_summary": {},
+        "output_summary": {
+          "outlier_count": 9,
+          "outlier_rate_pct": 5.7,
+          "normality_p": 0.0
+        },
+        "parameters": {
+          "column": "Kayıtlı_Seçmen_Sayısı",
+          "method": "IQR",
+          "threshold": 1.5
+        },
+        "duration_ms": 5.407,
+        "effect_size": {}
+      },
+      {
+        "timestamp": "2026-04-03T21:48:36.352565+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "2480281a-5e89-4d3f-a6fd-d311b82c8707",
+        "operation": "AUDIT",
+        "module": "statistical_auditor.outlier",
+        "status": "SUCCESS",
+        "message": "Aykırı 'Kayıtlı_Seçmen_Sayısı' (Robust Z-Score (MAD)): 39/158",
+        "input_summary": {},
+        "output_summary": {
+          "outlier_count": 39,
+          "outlier_rate_pct": 24.68,
+          "normality_p": 0.0
+        },
+        "parameters": {
+          "column": "Kayıtlı_Seçmen_Sayısı",
+          "method": "Robust Z-Score (MAD)",
+          "threshold": 3.0
+        },
+        "duration_ms": 5.403,
+        "effect_size": {}
+      }
+    ],
+    "NORMALIZE": [
+      {
+        "timestamp": "2026-04-03T21:45:01.839076+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "33eb7b09-21d4-4e61-b6b6-fe9fe6a7240d",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'SEQN' → fix_encoding, strip_whitespace, unicode_normalize, turkish_upper: 0/9813 değişti",
+        "input_summary": {
+          "column": "SEQN",
+          "total_rows": 9813
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "fix_encoding, strip_whitespace, unicode_normalize, turkish_upper"
+        },
+        "duration_ms": 280.13,
+        "effect_size": {
+          "effect_available": true,
+          "mean_before": 78644.56,
+          "mean_after": 78644.56,
+          "mean_delta_pct": 0.0,
+          "var_before": 8635324.5033,
+          "var_after": 8635324.5033,
+          "var_delta_pct": 0.0,
+          "cohen_d": 0.0,
+          "cohen_interpretation": "Ihmal Edilebilir"
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:45:23.430676+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "7704664e-abb7-4cfb-84d3-db37c28b0418",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'SEQN' → turkish_upper: 0/9813 değişti",
+        "input_summary": {
+          "column": "SEQN",
+          "total_rows": 9813
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "turkish_upper"
+        },
+        "duration_ms": 239.043,
+        "effect_size": {
+          "effect_available": true,
+          "mean_before": 78644.56,
+          "mean_after": 78644.56,
+          "mean_delta_pct": 0.0,
+          "var_before": 8635324.5033,
+          "var_after": 8635324.5033,
+          "var_delta_pct": 0.0,
+          "cohen_d": 0.0,
+          "cohen_interpretation": "Ihmal Edilebilir"
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:45:41.518669+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "f38467cc-1cbc-41ee-966a-d0642ef0ffd5",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'SEQN' → turkish_upper: 0/9813 değişti",
+        "input_summary": {
+          "column": "SEQN",
+          "total_rows": 9813
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "turkish_upper"
+        },
+        "duration_ms": 39.3,
+        "effect_size": {
+          "effect_available": true,
+          "mean_before": 78644.56,
+          "mean_after": 78644.56,
+          "mean_delta_pct": 0.0,
+          "var_before": 8635324.5033,
+          "var_after": 8635324.5033,
+          "var_delta_pct": 0.0,
+          "cohen_d": 0.0,
+          "cohen_interpretation": "Ihmal Edilebilir"
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:45:41.520677+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "0faa0a6d-a9c2-430e-b4fd-b204e1627f75",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'WTDRD1' → turkish_upper: 0/9813 değişti",
+        "input_summary": {
+          "column": "WTDRD1",
+          "total_rows": 9813
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "turkish_upper"
+        },
+        "duration_ms": 39.3,
+        "effect_size": {
+          "effect_available": true,
+          "mean_before": 31713.4634,
+          "mean_after": 31713.4634,
+          "mean_delta_pct": 0.0,
+          "var_before": 1300438885.9791,
+          "var_after": 1300438885.9791,
+          "var_delta_pct": 0.0,
+          "cohen_d": 0.0,
+          "cohen_interpretation": "Ihmal Edilebilir"
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:45:41.522680+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "d6b15a25-772c-428e-abe9-aa34c2093be5",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'WTDR2D' → turkish_upper: 0/9813 değişti",
+        "input_summary": {
+          "column": "WTDR2D",
+          "total_rows": 9813
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "turkish_upper"
+        },
+        "duration_ms": 39.3,
+        "effect_size": {
+          "effect_available": true,
+          "mean_before": 35931.6726,
+          "mean_after": 35931.6726,
+          "mean_delta_pct": 0.0,
+          "var_before": 2602768992.6639,
+          "var_after": 2602768992.6639,
+          "var_delta_pct": 0.0,
+          "cohen_d": 0.0,
+          "cohen_interpretation": "Ihmal Edilebilir"
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:45:41.523679+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "78093c88-6553-4c08-8704-e170b5481a27",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'DR1DRSTZ' → turkish_upper: 0/9813 değişti",
+        "input_summary": {
+          "column": "DR1DRSTZ",
+          "total_rows": 9813
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "turkish_upper"
+        },
+        "duration_ms": 39.3,
+        "effect_size": {
+          "effect_available": true,
+          "mean_before": 1.472,
+          "mean_after": 1.472,
+          "mean_delta_pct": 0.0,
+          "var_before": 1.5884,
+          "var_after": 1.5884,
+          "var_delta_pct": 0.0,
+          "cohen_d": 0.0,
+          "cohen_interpretation": "Ihmal Edilebilir"
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:45:41.527684+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "946d1245-c2fe-412a-95c8-e00a927946b1",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'DR1EXMER' → turkish_upper: 9813/9813 değişti",
+        "input_summary": {
+          "column": "DR1EXMER",
+          "total_rows": 9813
+        },
+        "output_summary": {
+          "changes_count": 9813,
+          "change_rate_pct": 100.0
+        },
+        "parameters": {
+          "operation_type": "turkish_upper"
+        },
+        "duration_ms": 39.3,
+        "effect_size": {
+          "effect_available": true,
+          "mean_before": 43.7934,
+          "mean_after": 43.7934,
+          "mean_delta_pct": 0.0,
+          "var_before": 421.716,
+          "var_after": 421.716,
+          "var_delta_pct": 0.0,
+          "cohen_d": 0.0,
+          "cohen_interpretation": "Ihmal Edilebilir"
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:45:41.533247+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "7e69ee0d-3377-4784-9363-4f12fb0e2a89",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'DRDINT' → turkish_upper: 9813/9813 değişti",
+        "input_summary": {
+          "column": "DRDINT",
+          "total_rows": 9813
+        },
+        "output_summary": {
+          "changes_count": 9813,
+          "change_rate_pct": 100.0
+        },
+        "parameters": {
+          "operation_type": "turkish_upper"
+        },
+        "duration_ms": 39.3,
+        "effect_size": {
+          "effect_available": true,
+          "mean_before": 1.8745,
+          "mean_after": 1.8745,
+          "mean_delta_pct": 0.0,
+          "var_before": 0.1098,
+          "var_after": 0.1098,
+          "var_delta_pct": 0.0,
+          "cohen_d": 0.0,
+          "cohen_interpretation": "Ihmal Edilebilir"
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:45:41.536247+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "8825950e-13f0-4035-9786-0ab33d36ae6c",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'DR1DBIH' → turkish_upper: 9813/9813 değişti",
+        "input_summary": {
+          "column": "DR1DBIH",
+          "total_rows": 9813
+        },
+        "output_summary": {
+          "changes_count": 9813,
+          "change_rate_pct": 100.0
+        },
+        "parameters": {
+          "operation_type": "turkish_upper"
+        },
+        "duration_ms": 39.3,
+        "effect_size": {
+          "effect_available": true,
+          "mean_before": 16.1761,
+          "mean_after": 16.1761,
+          "mean_delta_pct": 0.0,
+          "var_before": 139.3428,
+          "var_after": 139.3428,
+          "var_delta_pct": 0.0,
+          "cohen_d": 0.0,
+          "cohen_interpretation": "Ihmal Edilebilir"
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:45:41.538766+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "6f4f9826-563a-4960-ae2e-8e977150bef2",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'DR1DAY' → turkish_upper: 9813/9813 değişti",
+        "input_summary": {
+          "column": "DR1DAY",
+          "total_rows": 9813
+        },
+        "output_summary": {
+          "changes_count": 9813,
+          "change_rate_pct": 100.0
+        },
+        "parameters": {
+          "operation_type": "turkish_upper"
+        },
+        "duration_ms": 39.3,
+        "effect_size": {
+          "effect_available": true,
+          "mean_before": 4.5014,
+          "mean_after": 4.5014,
+          "mean_delta_pct": 0.0,
+          "var_before": 4.7711,
+          "var_after": 4.7711,
+          "var_delta_pct": 0.0,
+          "cohen_d": 0.0,
+          "cohen_interpretation": "Ihmal Edilebilir"
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:45:41.540775+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "e1fe211b-0b4d-4804-ad31-46ce7865ba0b",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'DR1LANG' → turkish_upper: 9813/9813 değişti",
+        "input_summary": {
+          "column": "DR1LANG",
+          "total_rows": 9813
+        },
+        "output_summary": {
+          "changes_count": 9813,
+          "change_rate_pct": 100.0
+        },
+        "parameters": {
+          "operation_type": "turkish_upper"
+        },
+        "duration_ms": 39.3,
+        "effect_size": {
+          "effect_available": true,
+          "mean_before": 1.1563,
+          "mean_after": 1.1563,
+          "mean_delta_pct": 0.0,
+          "var_before": 0.3088,
+          "var_after": 0.3088,
+          "var_delta_pct": 0.0,
+          "cohen_d": 0.0,
+          "cohen_interpretation": "Ihmal Edilebilir"
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:45:41.542775+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "4986b39c-3beb-47b9-a97b-53e70c306823",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'DR1MNRSP' → turkish_upper: 9813/9813 değişti",
+        "input_summary": {
+          "column": "DR1MNRSP",
+          "total_rows": 9813
+        },
+        "output_summary": {
+          "changes_count": 9813,
+          "change_rate_pct": 100.0
+        },
+        "parameters": {
+          "operation_type": "turkish_upper"
+        },
+        "duration_ms": 39.3,
+        "effect_size": {
+          "effect_available": true,
+          "mean_before": 1.3578,
+          "mean_after": 1.3578,
+          "mean_delta_pct": 0.0,
+          "var_before": 2.1947,
+          "var_after": 2.1947,
+          "var_delta_pct": 0.0,
+          "cohen_d": 0.0,
+          "cohen_interpretation": "Ihmal Edilebilir"
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:19.316278+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "1409d340-08ce-40e9-a271-16c9c213f531",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Urun_Adi' → unicode_normalize, turkish_upper: 3/7 değişti",
+        "input_summary": {
+          "column": "Urun_Adi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 3,
+          "change_rate_pct": 42.86
+        },
+        "parameters": {
+          "operation_type": "unicode_normalize, turkish_upper"
+        },
+        "duration_ms": 3.589,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:19.320237+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "89d505ac-f996-4978-9fae-75968f999ede",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Firma_Ismi' → unicode_normalize, turkish_upper: 2/7 değişti",
+        "input_summary": {
+          "column": "Firma_Ismi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 2,
+          "change_rate_pct": 28.57
+        },
+        "parameters": {
+          "operation_type": "unicode_normalize, turkish_upper"
+        },
+        "duration_ms": 3.589,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:19.322363+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "189b91f4-1c20-4413-bf4f-db1d5caa33ec",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Tarih' → unicode_normalize, turkish_upper: 0/7 değişti",
+        "input_summary": {
+          "column": "Tarih",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "unicode_normalize, turkish_upper"
+        },
+        "duration_ms": 3.589,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:19.324685+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "b83b1e36-c2b4-47d8-b4d3-695b679e39ab",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Birim_Fiyat' → unicode_normalize, turkish_upper: 0/7 değişti",
+        "input_summary": {
+          "column": "Birim_Fiyat",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "unicode_normalize, turkish_upper"
+        },
+        "duration_ms": 3.589,
+        "effect_size": {
+          "effect_available": true,
+          "mean_before": 62.3071,
+          "mean_after": 62.3071,
+          "mean_delta_pct": 0.0,
+          "var_before": 2399.8137,
+          "var_after": 2399.8137,
+          "var_delta_pct": 0.0,
+          "cohen_d": 0.0,
+          "cohen_interpretation": "Ihmal Edilebilir"
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:19.326862+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "6856df21-65e4-4c94-96ad-0d54ca69759b",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Stok' → unicode_normalize, turkish_upper: 0/7 değişti",
+        "input_summary": {
+          "column": "Stok",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "unicode_normalize, turkish_upper"
+        },
+        "duration_ms": 3.589,
+        "effect_size": {
+          "effect_available": true,
+          "mean_before": 3412.1429,
+          "mean_after": 3412.1429,
+          "mean_delta_pct": 0.0,
+          "var_before": 20867682.1429,
+          "var_after": 20867682.1429,
+          "var_delta_pct": 0.0,
+          "cohen_d": 0.0,
+          "cohen_interpretation": "Ihmal Edilebilir"
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:29.444080+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "50c90273-3dc7-4f6f-a68e-138b6c40553a",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Urun_Adi' → unicode_normalize, turkish_lower: 7/7 değişti",
+        "input_summary": {
+          "column": "Urun_Adi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 7,
+          "change_rate_pct": 100.0
+        },
+        "parameters": {
+          "operation_type": "unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 2.557,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:29.445081+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "53030a35-6608-4086-9595-4c7c216c89f1",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Firma_Ismi' → unicode_normalize, turkish_lower: 7/7 değişti",
+        "input_summary": {
+          "column": "Firma_Ismi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 7,
+          "change_rate_pct": 100.0
+        },
+        "parameters": {
+          "operation_type": "unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 2.557,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:29.446078+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "fdd1f815-32fe-4939-b214-911a708c2005",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Tarih' → unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Tarih",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 2.557,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:29.448313+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "c1a8a2a2-4b92-46d0-892f-f9a39f5b565f",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Birim_Fiyat' → unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Birim_Fiyat",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 2.557,
+        "effect_size": {
+          "effect_available": true,
+          "mean_before": 62.3071,
+          "mean_after": 62.3071,
+          "mean_delta_pct": 0.0,
+          "var_before": 2399.8137,
+          "var_after": 2399.8137,
+          "var_delta_pct": 0.0,
+          "cohen_d": 0.0,
+          "cohen_interpretation": "Ihmal Edilebilir"
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:29.448838+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "fd6beb4b-209d-45aa-9165-ccdad78cbc4b",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Stok' → unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Stok",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 2.557,
+        "effect_size": {
+          "effect_available": true,
+          "mean_before": 3412.1429,
+          "mean_after": 3412.1429,
+          "mean_delta_pct": 0.0,
+          "var_before": 20867682.1429,
+          "var_after": 20867682.1429,
+          "var_delta_pct": 0.0,
+          "cohen_d": 0.0,
+          "cohen_interpretation": "Ihmal Edilebilir"
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:36.606312+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "3b7bda90-6728-4dc5-8f98-b3bcb12c1531",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Urun_Adi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Urun_Adi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 2.578,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:36.607308+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "eea5926a-cd0f-4c69-b5a5-2de5b9153d36",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Firma_Ismi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Firma_Ismi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 2.578,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:36.609830+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "5fe1125f-1b0c-41fc-b78f-fd155caea8a6",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Tarih' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Tarih",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 2.578,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:36.611821+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "539f3a6d-c7e0-4ec9-895d-1e37b7d80168",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Birim_Fiyat' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Birim_Fiyat",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 2.578,
+        "effect_size": {
+          "effect_available": true,
+          "mean_before": 62.3071,
+          "mean_after": 62.3071,
+          "mean_delta_pct": 0.0,
+          "var_before": 2399.8137,
+          "var_after": 2399.8137,
+          "var_delta_pct": 0.0,
+          "cohen_d": 0.0,
+          "cohen_interpretation": "Ihmal Edilebilir"
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:36.613822+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "7ff8b046-fa85-4f77-96c9-e9aaa4424b11",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Stok' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Stok",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 2.578,
+        "effect_size": {
+          "effect_available": true,
+          "mean_before": 3412.1429,
+          "mean_after": 3412.1429,
+          "mean_delta_pct": 0.0,
+          "var_before": 20867682.1429,
+          "var_after": 20867682.1429,
+          "var_delta_pct": 0.0,
+          "cohen_d": 0.0,
+          "cohen_interpretation": "Ihmal Edilebilir"
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:46.636862+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "d9487a6a-be9a-4608-98f6-8507fd9151c4",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Urun_Adi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Urun_Adi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 3.213,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:46.639439+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "639fff95-c345-498d-9551-df72c9c6556e",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Firma_Ismi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Firma_Ismi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 3.213,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:46.640964+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "e0eee956-40d3-4a29-810e-73e9516ce212",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Tarih' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Tarih",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 3.213,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:46.641991+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "14243ee5-96b5-41b5-b18c-141d1b50d866",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Stok' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Stok",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 3.213,
+        "effect_size": {
+          "effect_available": true,
+          "mean_before": 3412.1429,
+          "mean_after": 3412.1429,
+          "mean_delta_pct": 0.0,
+          "var_before": 20867682.1429,
+          "var_after": 20867682.1429,
+          "var_delta_pct": 0.0,
+          "cohen_d": 0.0,
+          "cohen_interpretation": "Ihmal Edilebilir"
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:49.894544+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "958193c0-c6f6-4dca-b91f-07ccb2bc89a2",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Urun_Adi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Urun_Adi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 5.257,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:49.895553+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "ef17dce0-9b68-498a-be06-35af40b653ca",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Firma_Ismi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Firma_Ismi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 5.257,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:50.810884+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "c368dd69-1c6f-4637-8de1-049c33b67f49",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Urun_Adi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Urun_Adi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 5.124,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:50.812878+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "64d0185d-347a-4831-9da7-26a01f64b109",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Firma_Ismi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Firma_Ismi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 5.124,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:51.005841+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "6c8b8694-cfd3-42dd-be06-50f22eb3294b",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Urun_Adi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Urun_Adi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 5.259,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:51.007827+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "9cbe9fb3-9156-483c-8a66-451737ad507a",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Firma_Ismi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Firma_Ismi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 5.259,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:51.185798+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "739fbf13-ef85-40be-8f74-437410869306",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Urun_Adi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Urun_Adi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 5.181,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:51.187799+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "44fb229f-24ca-4de9-b657-8054ba653499",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Firma_Ismi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Firma_Ismi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 5.181,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:51.351796+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "a0ca6f65-7a34-46ef-836a-35a3ea1bd32b",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Urun_Adi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Urun_Adi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 5.026,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:51.354784+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "996bc93d-d55b-4f2a-ae71-1c7ddc8401ea",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Firma_Ismi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Firma_Ismi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 5.026,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:51.525429+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "b0bcdc71-8c36-4bf8-97a7-8d13d5b9ebad",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Urun_Adi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Urun_Adi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 5.955,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:51.528780+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "89a99156-65c7-406c-9468-61b2226a3f23",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Firma_Ismi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Firma_Ismi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 5.955,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:51.713856+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "9216dc48-6836-4f3e-8d45-49b2a43252b2",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Urun_Adi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Urun_Adi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 5.248,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:51.715883+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "5b3d7414-0506-401d-a4b0-903422582b94",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Firma_Ismi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Firma_Ismi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 5.248,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:51.880977+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "5f3c450d-17d3-4146-ad38-39f998a3abad",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Urun_Adi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Urun_Adi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 4.906,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:51.883002+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "d109524b-4c23-4b5f-9e61-ed32c1711a80",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Firma_Ismi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Firma_Ismi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 4.906,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:52.049923+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "05bb76fa-07ce-4491-bbd5-4fcf636bf1c2",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Urun_Adi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Urun_Adi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 5.297,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:52.052999+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "e3230176-f468-4aca-b453-4d3ad8b44895",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Firma_Ismi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Firma_Ismi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 5.297,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:52.222074+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "f3c001b4-d1bd-4182-8340-c398159bd164",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Urun_Adi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Urun_Adi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 6.99,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:52.224090+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "45fa7dd4-d38f-4d35-80e1-71055fe67bfd",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Firma_Ismi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Firma_Ismi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 6.99,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:52.391805+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "79c8a5a2-1b0a-4021-9706-d8b3706222be",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Urun_Adi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Urun_Adi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 5.698,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:52.393808+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "ffdd18fc-80cc-4d59-88c5-3f8ebffb5b65",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Firma_Ismi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Firma_Ismi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 5.698,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:52.551154+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "72d0bd92-4532-4688-99f7-70a7dd6828e5",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Urun_Adi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Urun_Adi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 5.486,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:52.553147+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "f1442635-1ab3-4f27-9d5f-50a7ff3016c3",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Firma_Ismi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Firma_Ismi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 5.486,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:52.740122+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "7d7d519b-a0b0-4f8e-a29a-ba01c3e4c6ec",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Urun_Adi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Urun_Adi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 6.121,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:52.742611+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "ea951c3e-75ad-43a4-ab55-89f51c7df0e3",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Firma_Ismi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Firma_Ismi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 6.121,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:54.621237+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "4f689641-600d-4d7c-94d9-67dfbdf84ff5",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Urun_Adi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Urun_Adi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 6.303,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:46:54.623235+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "c0180490-74a1-478d-a06b-3d6322f0ce92",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Firma_Ismi' → strip_whitespace, unicode_normalize, turkish_lower: 0/7 değişti",
+        "input_summary": {
+          "column": "Firma_Ismi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize, turkish_lower"
+        },
+        "duration_ms": 6.303,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:47:25.839412+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "c9f974ac-9e02-4575-ae5f-b5a679ada3d4",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Urun_Adi' → strip_whitespace, unicode_normalize: 0/7 değişti",
+        "input_summary": {
+          "column": "Urun_Adi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize"
+        },
+        "duration_ms": 5.472,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:47:25.842440+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "82f4b4bb-9618-4a21-90e2-bdd5db9d73cf",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Firma_Ismi' → strip_whitespace, unicode_normalize: 0/7 değişti",
+        "input_summary": {
+          "column": "Firma_Ismi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize"
+        },
+        "duration_ms": 5.472,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:47:26.496119+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "9d8efebe-29ea-48b3-9a92-f4f79ca706af",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Urun_Adi' → strip_whitespace, unicode_normalize: 0/7 değişti",
+        "input_summary": {
+          "column": "Urun_Adi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize"
+        },
+        "duration_ms": 5.616,
+        "effect_size": {
+          "effect_available": false
+        }
+      },
+      {
+        "timestamp": "2026-04-03T21:47:26.497140+00:00",
+        "session_id": "9e6327be-f81e-4c7e-ba95-177c4e41c8d1",
+        "record_id": "b6ab7729-1bc9-4d66-a02a-b5e92f8a32c3",
+        "operation": "NORMALIZE",
+        "module": "normalizer",
+        "status": "SUCCESS",
+        "message": "'Firma_Ismi' → strip_whitespace, unicode_normalize: 0/7 değişti",
+        "input_summary": {
+          "column": "Firma_Ismi",
+          "total_rows": 7
+        },
+        "output_summary": {
+          "changes_count": 0,
+          "change_rate_pct": 0.0
+        },
+        "parameters": {
+          "operation_type": "strip_whitespace, unicode_normalize"
+        },
+        "duration_ms": 5.616,
+        "effect_size": {
+          "effect_available": false
+        }
+      }
+    ]
+  },
+  "audit_trail_file": "C:\\Users\\metin\\OneDrive\\Desktop\\data-autopsy\\audits\\session_20260403_214120_9e6327be.jsonl"
+}

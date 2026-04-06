@@ -1,0 +1,31 @@
+# Data-Autopsy — Python Bağımlılıkları
+# Kurulum: pip install -r requirements.txt
+
+# --- Arayüz ---
+flet>=0.21.0
+
+# --- Veri Motoru ---
+duckdb>=0.10.0
+pandas>=2.0.0
+openpyxl>=3.1.0        # Excel (.xlsx) desteği
+xlrd>=2.0.1            # Excel (.xls) desteği
+
+# --- İstatistik ---
+numpy>=1.26.0
+scipy>=1.12.0
+
+# --- Encoding Tespiti (ikisi de opsiyonel, biri yeterli) ---
+chardet>=5.2.0
+charset-normalizer>=3.3.0
+
+# --- Bulanık Eşleştirme (tercih: rapidfuzz, yoksa thefuzz) ---
+rapidfuzz>=3.6.0
+# thefuzz>=0.22.0       # Alternatif (python-Levenshtein ile birlikte kullanın)
+
+# --- Raporlama (HTML rapor için opsiyonel) ---
+jinja2>=3.1.0
+
+# --- Geliştirme Araçları ---
+# pytest>=8.0.0
+# black>=24.0.0
+# mypy>=1.8.0
